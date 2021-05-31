@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    </head>
+<body>
+    <h1>Update</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="l-part">
+      {{ form.non_field_errors }}
+      <div class="fieldWrapper">
+        </br>
+        {{ form.customer_id.errors }}
+        </br>
+        <label for="{{ form.customer_id.id_for_label }}">Customer Name:</label>
+        <input type="text" name="customer_id" value="{{order.customer_id}}" readonly >
+      </div>
+    </br>
+    <div class="l-part">
+      {{ form.non_field_errors }}
+      <div class="fieldWrapper">
+        {{ form.product_id.errors }}
+        </br>
+        <label for="{{ form.product_id.id_for_label }}">Product Name:</label>
+        <input type="text" name="product_id" value="{{order.product_id}}" readonly >
+      </div>
+  </div>
+    </br>
+      <div class="fieldWrapper">
+        {{ form.unit_price.errors }}
+        <label for="{{ form.unit_price.id_for_label }}">Unit Price:  </label>
+           {{ form.unit_price }}
+      </div>
+    </br> 
+      <div class="fieldWrapper">
+          {{ form.qty.errors }}
+          <label for="{{ form.qty.id_for_label }}">Qty:  </label>
+          {{ form.qty }}
+      </div>
+     </br>
+     <div class="fieldWrapper">
+        {{ form.total_price.errors }}
+        <label for="{{ form.total_price.id_for_label }}">Total:  </label>
+        <input type="text" name ="total_price" value="{{order.get_total}}" readonly >
+    </div>
+   </br>
+</br>
+        <button type="submit" class="btn">Place Order</button>
+    </div>
+  </div>
+  </form>
+    <script>
+	var name = "{{ user.id }}";
+	document.getElementById("user").value = name;
+
+	var name2 = "d";
+	document.getElementById("status").value = name2;
+</script>
+
+    </script>
+</body>
+</html>

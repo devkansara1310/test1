@@ -1,0 +1,33 @@
+<form action="" method="get">
+    <input name="search" type="text" placeholder="Search...">
+</form>
+
+<h1>----</h1>
+
+
+
+<table>
+
+{% for items in items %}
+<tr>
+<td>
+{{items.customer_id.first_name}}
+</td>
+<td>
+{{items.product_id.name}}
+</td>
+<td>
+{{items.unit_price}}
+</td>
+<td>   
+{{items.qty}}
+</td>
+<td>
+{{items.total_price}}
+</td>
+<td> <a href="{% url 'update' items.pk %}">Edit</a></td>
+<td> <a href="{% url 'delete' items.pk %}">Delete</a></td>
+
+</tr>
+{% endfor %}
+</table>

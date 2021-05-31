@@ -1,0 +1,46 @@
+<h1>order</h1>
+<form method="post" action="{% url 'show' %}">
+    {% csrf_token %}
+    <div class="l-part">
+      {{ form.non_field_errors }}
+      <div class="fieldWrapper">
+        </br>
+        {{ form.customer_id.errors }}
+        </br>
+        <label for="{{ form.customer_id.id_for_label }}">Customer_id:</label>
+        {{ form.customer_id }}
+      </div>
+    </br>
+    <div class="l-part">
+      {{ form.non_field_errors }}
+      <div class="fieldWrapper">
+        {{ form.product_id.errors }}
+        </br>
+        <label for="{{ form.product_id.id_for_label }}">Product_id:</label>
+        {{ form.product_id }}
+      </div>
+  </div>
+    </br>
+      <div class="fieldWrapper">
+        {{ form.unit_price.errors }}
+        <label for="{{ form.unit_price.id_for_label }}">Unit Price:  </label>
+           {{ form.unit_price }}
+      </div>
+    </br> 
+      <div class="fieldWrapper">
+          {{ form.qty.errors }}
+          <label for="{{ form.qty.id_for_label }}">Qty:  </label>
+          {{ form.qty }}
+      </div>
+     </br>
+     <div class="fieldWrapper">
+        {{ form.total_price.errors }}
+        <label for="{{ form.total_price.id_for_label }}">Total:  </label>
+        {{ form.total_price }}
+    </div>
+   </br>
+</br>
+        <button type="submit" class="btn">Place Order</button>
+    </div>
+  </div>
+  </form>

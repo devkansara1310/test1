@@ -1,0 +1,29 @@
+<form action="" method="get">
+    <input name="search" type="text" placeholder="Search...">
+</form>
+<h2>search item</h1>
+<table>
+{% for search in search %}
+<tr>
+<td>
+{{search.customer_id.first_name}}
+</td>
+<td>
+{{search.product_id.name}}
+</td>
+<td>
+{{search.unit_price}}
+</td>
+<td>   
+{{search.qty}}
+</td>
+<td>
+{{search.total_price}}
+</td>
+</tr>
+{% endfor %}
+
+<h1>----</h1>
+
+</table>
+
